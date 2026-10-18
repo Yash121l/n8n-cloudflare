@@ -6,3 +6,6 @@ src/runtime/code-sandbox/python.generated.ts
 
 # Playwright failure screenshots
 test/e2e/artifacts
+
+# Built by scripts/generate-registry.mjs
+src/generated

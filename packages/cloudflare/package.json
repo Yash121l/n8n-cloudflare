@@ -10,7 +10,7 @@
     "build:worker": "pnpm build:sandbox && node build.mjs src/index.ts dist/worker",
     "build:assets": "node scripts/build-assets.mjs",
     "build": "pnpm generate && pnpm build:worker && pnpm build:assets",
-    "typecheck": "pnpm build:sandbox && tsc --noEmit",
+    "typecheck": "pnpm generate && pnpm build:sandbox && tsc --noEmit",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "test": "vitest run && vitest run --config vitest.webhooks.config.ts && vitest run --config vitest.assets.config.ts",
