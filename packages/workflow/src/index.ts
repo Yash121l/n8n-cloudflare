@@ -34,6 +34,7 @@ export * from './message-event-bus';
 export * from './execution-status';
 export * from './trimmed-task-data';
 export * from './expression';
+export { setExpressionEvaluator } from './expression-evaluator-proxy';
 export * from './expressions/expression-helpers';
 export * from './from-ai-parse-utils';
 export * from './node-helpers';
