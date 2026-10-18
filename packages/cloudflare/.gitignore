@@ -1,0 +1,11 @@
+.wrangler
+.dev.vars
+# Built by scripts/build-sandbox.mjs
+src/runtime/code-sandbox/bundle.generated.ts
+src/runtime/code-sandbox/python.generated.ts
+
+# Playwright failure screenshots
+test/e2e/artifacts
+
+# Built by scripts/generate-registry.mjs
+src/generated

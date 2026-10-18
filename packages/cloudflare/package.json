@@ -1,0 +1,51 @@
+{
+  "name": "@n8n/cloudflare",
+  "version": "0.1.0",
+  "private": true,
+  "description": "n8n on Cloudflare Workers, D1, Durable Objects, Workflows and R2",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-registry.mjs",
+    "build:sandbox": "node scripts/build-sandbox.mjs",
+    "build:worker": "pnpm build:sandbox && node build.mjs src/index.ts dist/worker",
+    "build:assets": "node scripts/build-assets.mjs",
+    "build": "pnpm generate && pnpm build:worker && pnpm build:assets",
+    "typecheck": "pnpm generate && pnpm build:sandbox && tsc --noEmit",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest run && vitest run --config vitest.webhooks.config.ts && vitest run --config vitest.assets.config.ts",
+    "test:e2e": "vitest run --config vitest.e2e.config.ts"
+  },
+  "dependencies": {
+    "@n8n/api-types": "workspace:*",
+    "@n8n/blob-storage": "workspace:*",
+    "@n8n/client-oauth2": "workspace:*",
+    "@n8n/di": "workspace:*",
+    "@n8n/n8n-nodes-langchain": "workspace:*",
+    "@n8n/permissions": "workspace:*",
+    "@n8n/tournament": "workspace:*",
+    "@n8n/utils": "workspace:*",
+    "bcryptjs": "2.4.3",
+    "cron": "catalog:",
+    "flatted": "catalog:",
+    "hono": "catalog:",
+    "kafkajs": "catalog:",
+    "luxon": "catalog:",
+    "n8n-core": "workspace:*",
+    "n8n-nodes-base": "workspace:*",
+    "n8n-workflow": "workspace:*",
+    "nanoid": "catalog:",
+    "sval": "catalog:"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "catalog:",
+    "@cloudflare/workers-types": "catalog:",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/luxon": "catalog:",
+    "esbuild": "catalog:",
+    "playwright": "catalog:e2e",
+    "typescript": "catalog:",
+    "vitest": "catalog:",
+    "wrangler": "catalog:"
+  }
+}
